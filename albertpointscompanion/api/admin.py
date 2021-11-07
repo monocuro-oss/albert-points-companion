@@ -1,7 +1,22 @@
 from django.contrib import admin
 
-from .models import CommandCategory, Command
+from .models import (
+    CommandCategory,
+    Command,
+    ItemCategory,
+    Item,
+    HelperGroup,
+    HelperTeam,
+    Helper
+)
 
-
-admin.site.register(CommandCategory)
-admin.site.register(Command)
+for model in [
+    CommandCategory,
+    Command,
+    ItemCategory,
+    Item,
+    HelperGroup,
+    HelperTeam,
+    Helper
+]:
+    admin.site.register(model)
