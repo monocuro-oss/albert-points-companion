@@ -1,7 +1,17 @@
 version: "3.9"
 
 services:
-  backend:
+  client:
+    build:
+      context: ../../albertpointscompanion/client
+      dockerfile: ../../docker/local/Dockerfile.client
+    ports:
+      - 3000:3000
+    volumes:
+      - ../../albertpointscompanion/client:/app:cached
+      - ../../albertpointscompanion/client/static/client:/app/static/client
+
+  django:
     build:
       context: ../../albertpointscompanion
       dockerfile: ../docker/local/Dockerfile
@@ -12,7 +22,7 @@ services:
       POSTGRE_USER: admin
       POSTGRE_PASSWORD: password
     ports:
-      - "8000:8000"
+      - 8000:8000
     volumes:
       - ../../albertpointscompanion:/app:cached
     depends_on:
