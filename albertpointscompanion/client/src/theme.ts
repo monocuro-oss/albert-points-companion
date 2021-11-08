@@ -3,15 +3,20 @@ import { createGlobalStyle } from 'styled-components';
 export const styledComponentTheme = {
   colors: {
     background: '#2B2F34',
+    backgroundLight: '#474C53',
     primaryAccent: '#77AE54',
     primaryAccentDark: '#62844C',
     text: '#FFFFFF',
+  },
+  layout: {
+    headerHeight: '6rem',
+    sectionNavWidth: '15rem',
+    contentMaxWidth: '1200px',
   },
 };
 
 export const GlobalStyle = createGlobalStyle`
 html, body {
-  padding: 0;
   margin: 0;
 }
 

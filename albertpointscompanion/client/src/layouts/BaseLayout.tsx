@@ -4,20 +4,19 @@ import { Link } from 'react-router-dom';
 
 import { pages } from '@/pages';
 
-const HEADER_HEIGHT = '6rem';
-
 const Header = styled.header`
   align-items: center;
   background-color: ${(props) => props.theme.colors.primaryAccent};
   box-sizing: border-box;
   display: flex;
-  height: ${HEADER_HEIGHT};
+  height: ${(props) => props.theme.layout.headerHeight};
   left: 0;
   justify-content: space-between;
   padding: 0 3rem;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
 `;
 const TitleLink = styled(Link)`
   color: ${(props) => props.theme.colors.text};
@@ -43,9 +42,8 @@ const NavLink = styled(Link)`
   text-decoration: none;
 `;
 
-const Main = styled.main`
-  margin-top: ${HEADER_HEIGHT};
-  padding: 2rem 3rem;
+const Body = styled.div`
+  margin-top: ${(props) => props.theme.layout.headerHeight};
 `;
 
 interface BaseLayoutProps {
@@ -66,7 +64,7 @@ const BaseLayout: FC<BaseLayoutProps> = ({ children }) => {
           ))}
         </Nav>
       </Header>
-      <Main>{children}</Main>
+      <Body>{children}</Body>
     </>
   );
 };
