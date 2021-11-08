@@ -1,19 +1,18 @@
 import React, { FC } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useRouteMatch,
-} from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { styledComponentTheme, GlobalStyle } from '@/theme';
+import { home, pages } from '@/pages';
 
 const App: FC = () => {
   return (
     <Switch>
-      <Route path="/commands">Commands</Route>
-      <Route path="/">Home</Route>
+      {[...pages, home].map((page, index) => (
+        <Route path={page.path} key={index}>
+          {page.component}
+        </Route>
+      ))}
     </Switch>
   );
 };

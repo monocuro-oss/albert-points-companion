@@ -15,8 +15,10 @@ html, body {
   margin: 0;
 }
 
-body {
+html {
   background-color: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.text};
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
 }
 `;
