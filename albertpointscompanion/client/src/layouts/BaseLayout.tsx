@@ -19,7 +19,6 @@ const Header = styled.header`
   z-index: 1000;
 `;
 const TitleLink = styled(Link)`
-  color: ${(props) => props.theme.colors.text};
   text-decoration: none;
 
   h1 {
@@ -33,7 +32,6 @@ const Nav = styled.nav`
 `;
 const NavLink = styled(Link)`
   align-items: center;
-  color: ${(props) => props.theme.colors.text};
   display: inline-flex;
   font-weight: 600;
   height: 100%;

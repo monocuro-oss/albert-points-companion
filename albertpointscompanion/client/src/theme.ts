@@ -26,4 +26,12 @@ html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
 }
+
+a {
+  color: ${(props) => props.theme.colors.text};
+}
+
+code {
+  background-color: ${(props) => props.theme.colors.backgroundLight};
+}
 `;

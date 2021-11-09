@@ -42,6 +42,10 @@ const request = async <T>(payload: AxiosRequestConfig): Promise<T> => {
   return response.data;
 };
 
+export const getHomeContents = (): Promise<string> => {
+  return request({ method: 'GET', url: '/home' });
+};
+
 export const getCommandSets = (): Promise<CommandSet[]> => {
   return request({ method: 'GET', url: '/commandSets' });
 };
