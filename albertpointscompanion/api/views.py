@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.forms.models import model_to_dict
 
 from .models import (
+    MarkdownPages,
     CommandCategory,
     Command,
     ItemCategory,
@@ -11,6 +11,13 @@ from .models import (
     HelperTeam,
     Helper
 )
+
+# Markdown Pages
+
+def get_home_content(request):
+    page, _ = MarkdownPages.objects.get_or_create(name='home')
+    return HttpResponse(page.content)
+
 
 # Commands
 
