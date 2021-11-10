@@ -8,7 +8,7 @@ To start up the development environment, run:
 docker-compose -f docker/local/docker-compose.yml up --build
 ```
 
-You will be able to access the application from `localhost:8000`.
+You will be able to access the application from `localhost:3000`.
 
 ## First time setup
 

@@ -1,16 +1,14 @@
 import path from 'path';
-import webpack, { Configuration } from 'webpack';
-import 'webpack-dev-server';
+import { Configuration } from 'webpack';
 
 const config: Configuration = {
-  mode: 'development',
-
   context: path.join(__dirname, 'src'),
   entry: './index.tsx',
 
   output: {
     path: path.join(__dirname, 'static/client'),
     filename: 'bundle.js',
+    publicPath: '/static/client',
   },
 
   module: {
@@ -28,8 +26,6 @@ const config: Configuration = {
       '@': path.resolve(__dirname, 'src'),
     },
   },
-
-  devtool: 'inline-source-map',
 };
 
 export default config;
