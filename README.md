@@ -1,5 +1,20 @@
 # Albert Points Companion
 
+# Environment Variables
+
+| Key              | Required | Values         | Description                                                 |
+| ---------------- | -------- | -------------- | ----------------------------------------------------------- |
+| SECRET_KEY       | ○        | [string]       | Django secret key                                           |
+| DEBUG            |          | "True"/"False" | Turns Django debug mode on/off (Default: "False")           |
+| ALLOWED_HOST     |          | [string]       | A string of allowed hosts separated by a whitespace         |
+| SSL_ENABLED      |          | "True"/"False" | Force use SSL (Default: "False")                            |
+| STATIC_ROOT      |          | [string]       | Absolute path to gather static files                        |
+| POSTGRE_NAME     |          | [string]       | Postgresql Database name (Default: "albertpointscompanion") |
+| POSTGRE_USER     | ○        | [string]       | Postgresql Username                                         |
+| POSTGRE_PASSWORD | ○        | [string]       | Postgresql Password                                         |
+| POSTGRE_HOST     | ○        | [string]       | Postgresql Hostname                                         |
+| POSTGRE_PORT     | ○        | [string]       | Postgresql Port                                             |
+
 # Development Guide
 
 To start up the development environment, run:

@@ -16,18 +16,15 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+SECRET_KEY = os.environ['SECRET_KEY']
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+DEBUG = os.environ.get('DEBUG') == 'True'
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^-v3g5$!-$ce3u5&f6#yu^%)4rtgwgpx$gnvxsueyh*mhtjg43'
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOST', '').split()
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+SECURE_SSL_REDIRECT: os.environ.get('SSL_ENABLED') == 'True'
+SESSION_COOKIE_SECURE: os.environ.get('SSL_ENABLED') == 'True'
+CSRF_COOKIE_SECURE: os.environ.get('SSL_ENABLED') == 'True'
 
 # Application definition
 
@@ -125,6 +122,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.environ.get('STATIC_ROOT')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

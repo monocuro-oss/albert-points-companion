@@ -16,6 +16,9 @@ services:
       context: ../../albertpointscompanion
       dockerfile: ../docker/local/Dockerfile
     environment:
+      PRODUCTION: "False"
+      SECRET_KEY: secretkey
+      DEBUG: "True"
       POSTGRE_HOST: db
       POSTGRE_PORT: "5432"
       POSTGRE_NAME: albertpointscompanion
