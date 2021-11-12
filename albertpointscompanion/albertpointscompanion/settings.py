@@ -21,7 +21,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = os.environ.get('DEBUG') == 'True'
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOST', '').split()
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split()
 
 SECURE_SSL_REDIRECT: os.environ.get('SSL_ENABLED') == 'True'
 SESSION_COOKIE_SECURE: os.environ.get('SSL_ENABLED') == 'True'

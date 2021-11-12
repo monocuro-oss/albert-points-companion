@@ -6,7 +6,7 @@
 | ---------------- | -------- | -------------- | ------------------------------------------------------------------- |
 | SECRET_KEY       | ○        | [string]       | Django secret key                                                   |
 | DEBUG            |          | "True"/"False" | Turns Django debug mode on/off (Default: "False")                   |
-| ALLOWED_HOST     |          | [string]       | A string of allowed hosts separated by a whitespace                 |
+| ALLOWED_HOSTS    |          | [string]       | A string of allowed hosts separated by a whitespace                 |
 | SSL_ENABLED      |          | "True"/"False" | Force use SSL (Default: "False")                                    |
 | STATIC_ROOT      |          | [string]       | Absolute path to gather static files                                |
 | USE_DATABASE_URL |          | "True"/"False" | Set the default database with the DATABASE_URL environment variable |
