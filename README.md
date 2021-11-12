@@ -2,19 +2,20 @@
 
 # Environment Variables
 
-| Key              | Required | Values         | Description                                                         |
-| ---------------- | -------- | -------------- | ------------------------------------------------------------------- |
-| SECRET_KEY       | ○        | [string]       | Django secret key                                                   |
-| DEBUG            |          | "True"/"False" | Turns Django debug mode on/off (Default: "False")                   |
-| ALLOWED_HOSTS    |          | [string]       | A string of allowed hosts separated by a whitespace                 |
-| SSL_ENABLED      |          | "True"/"False" | Force use SSL (Default: "False")                                    |
-| STATIC_ROOT      |          | [string]       | Absolute path to gather static files                                |
-| USE_DATABASE_URL |          | "True"/"False" | Set the default database with the DATABASE_URL environment variable |
-| POSTGRE_NAME     |          | [string]       | Postgresql Database name (Default: "albertpointscompanion")         |
-| POSTGRE_USER     | ○        | [string]       | Postgresql Username                                                 |
-| POSTGRE_PASSWORD | ○        | [string]       | Postgresql Password                                                 |
-| POSTGRE_HOST     | ○        | [string]       | Postgresql Hostname                                                 |
-| POSTGRE_PORT     | ○        | [string]       | Postgresql Port                                                     |
+| Key               | Required | Values         | Description                                                               |
+| ----------------- | -------- | -------------- | ------------------------------------------------------------------------- |
+| SECRET_KEY        | ○        | [string]       | Django secret key                                                         |
+| DJANGO_ADMIN_PATH |          | [string]       | URL path of Admin page. Must end with trailing slash. (Default: "admin/") |
+| DEBUG             |          | "True"/"False" | Turns Django debug mode on/off (Default: "False")                         |
+| ALLOWED_HOSTS     |          | [string]       | A string of allowed hosts separated by a whitespace                       |
+| SSL_ENABLED       |          | "True"/"False" | Force use SSL (Default: "False")                                          |
+| STATIC_ROOT       |          | [string]       | Absolute path to gather static files                                      |
+| USE_DATABASE_URL  |          | "True"/"False" | Set the default database with the DATABASE_URL environment variable       |
+| POSTGRE_NAME      |          | [string]       | Postgresql Database name (Default: "albertpointscompanion")               |
+| POSTGRE_USER      | ○        | [string]       | Postgresql Username                                                       |
+| POSTGRE_PASSWORD  | ○        | [string]       | Postgresql Password                                                       |
+| POSTGRE_HOST      | ○        | [string]       | Postgresql Hostname                                                       |
+| POSTGRE_PORT      | ○        | [string]       | Postgresql Port                                                           |
 
 # Development Guide
 
