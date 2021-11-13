@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Page from './Page';
 import Link from '@/components/HashLink';
+import { cleanId } from '@/components/IdLink';
 
 const Container = styled.div`
   margin-left: ${(props) => props.theme.layout.sectionNavWidth};
@@ -34,7 +35,6 @@ export const Section = styled.section`
 
 export type SectionNavItem = {
   name: string;
-  id: string;
   children?: SectionNavItem[];
 };
 
@@ -47,7 +47,7 @@ const SectionNavItem: FC<SectionNavItemProps> = ({ navItems, level }) => {
     <>
       {navItems.map((navItem, index) => (
         <div key={index}>
-          <SectionNavItemLink to={`#${navItem.id}`} level={level}>
+          <SectionNavItemLink to={`#${cleanId(navItem.name)}`} level={level}>
             {navItem.name}
           </SectionNavItemLink>
           {navItem.children && (

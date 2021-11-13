@@ -20,13 +20,10 @@ const Helpers: FC = () => {
 
     return helperSets.map((set) => ({
       name: set.name,
-      id: encodeURIComponent(set.name),
       children: set.teams.map((team) => ({
         name: team.name,
-        id: encodeURIComponent(team.name),
         children: team.helpers.map((helper) => ({
           name: helper.name,
-          id: encodeURIComponent(helper.name),
         })),
       })),
     }));

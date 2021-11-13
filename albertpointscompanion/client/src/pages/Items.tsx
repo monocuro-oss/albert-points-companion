@@ -20,10 +20,8 @@ const Items: FC = () => {
 
     return itemSets.map((set) => ({
       name: set.name,
-      id: encodeURIComponent(set.name),
       children: set.items.map((item) => ({
         name: item.name,
-        id: encodeURIComponent(item.name),
       })),
     }));
   }, [itemSets]);

@@ -20,10 +20,8 @@ const Commands: FC = () => {
 
     return commandSets.map((set) => ({
       name: set.name,
-      id: encodeURIComponent(set.name),
       children: set.commands.map((command) => ({
         name: command.name,
-        id: encodeURIComponent(command.name),
       })),
     }));
   }, [commandSets]);

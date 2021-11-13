@@ -30,6 +30,10 @@ const BlockLink = styled(Link)`
   }
 `;
 
+// Make sure ids do not contain whitespaces
+export const cleanId = (dirtyId: string): string =>
+  dirtyId.replace(/\s+/g, '-');
+
 interface IdLinkProps {
   id: string;
   style?: 'block' | 'underline';
@@ -39,19 +43,19 @@ const IdLink: FC<IdLinkProps> = ({ id, style, children }) => {
   switch (style) {
     case 'underline':
       return (
-        <UnderlineLink to={`#${encodeURIComponent(id)}`} id={id}>
+        <UnderlineLink to={`#${cleanId(id)}`} id={cleanId(id)}>
           {children}
         </UnderlineLink>
       );
     case 'block':
       return (
-        <BlockLink to={`#${encodeURIComponent(id)}`} id={id}>
+        <BlockLink to={`#${cleanId(id)}`} id={cleanId(id)}>
           {children}
         </BlockLink>
       );
     default:
       return (
-        <Link to={`#${encodeURIComponent(id)}`} id={id}>
+        <Link to={`#${cleanId(id)}`} id={cleanId(id)}>
           {children}
         </Link>
       );
