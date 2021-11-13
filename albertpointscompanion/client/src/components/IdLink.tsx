@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Link as BaseLink } from 'react-router-dom';
+
+import BaseLink from './HashLink';
 
 const Link = styled(BaseLink)`
   display: block;

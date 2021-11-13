@@ -1,8 +1,8 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import Page from './Page';
+import Link from '@/components/HashLink';
 
 const Container = styled.div`
   margin-left: ${(props) => props.theme.layout.sectionNavWidth};
