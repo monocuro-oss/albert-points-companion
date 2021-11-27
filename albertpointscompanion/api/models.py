@@ -37,6 +37,7 @@ class ItemCategory(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+    image_url = models.URLField(blank=True)
     category = models.ForeignKey(ItemCategory, on_delete=models.CASCADE)
 
     def __str__(self):
