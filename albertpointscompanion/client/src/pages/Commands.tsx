@@ -1,16 +1,19 @@
 import React, { FC, useEffect, useMemo, useState } from 'react';
 
-import { CommandSet, getCommandSets } from '@/apiClient';
+import { CommandSet, getCommandSets, getCommandsMarkdown } from '@/apiClient';
 import SectionedPage, {
   Section,
   SectionNavItem,
 } from '@/layouts/SectionedPage';
 import IdLink from '@/components/IdLink';
+import MarkdownToHtml from '@/components/MarkdownToHtml';
 
 const Commands: FC = () => {
   const [commandSets, setCommandSets] = useState<CommandSet[]>([]);
+  const [contents, setContents] = useState<string>('');
 
   useEffect(() => {
+    getCommandsMarkdown().then(setContents);
     getCommandSets().then(setCommandSets);
   }, []);
 
@@ -30,6 +33,8 @@ const Commands: FC = () => {
       <IdLink id="Commands">
         <h1>Commands</h1>
       </IdLink>
+
+      <MarkdownToHtml md={contents} />
 
       {commandSets.map((set, index) => (
         <Section key={index}>
