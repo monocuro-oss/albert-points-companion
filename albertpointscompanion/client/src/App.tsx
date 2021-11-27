@@ -3,17 +3,20 @@ import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { styledComponentTheme, GlobalStyle } from '@/theme';
+import BaseLayout from '@/layouts/BaseLayout';
 import { home, pages } from '@/pages';
 
 const App: FC = () => {
   return (
-    <Switch>
-      {[...pages, home].map((page, index) => (
-        <Route path={page.path} key={index}>
-          {page.component}
-        </Route>
-      ))}
-    </Switch>
+    <BaseLayout>
+      <Switch>
+        {[...pages, home].map((page, index) => (
+          <Route path={page.path} key={index}>
+            {page.component}
+          </Route>
+        ))}
+      </Switch>
+    </BaseLayout>
   );
 };
 

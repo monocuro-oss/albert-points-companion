@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useMemo, useState } from 'react';
 
 import { CommandSet, getCommandSets } from '@/apiClient';
-import BaseLayout from '@/layouts/BaseLayout';
 import SectionedPage, {
   Section,
   SectionNavItem,
@@ -27,31 +26,29 @@ const Commands: FC = () => {
   }, [commandSets]);
 
   return (
-    <BaseLayout>
-      <SectionedPage navItems={sectionNavItems}>
-        <IdLink id="Commands">
-          <h1>Commands</h1>
-        </IdLink>
+    <SectionedPage navItems={sectionNavItems}>
+      <IdLink id="Commands">
+        <h1>Commands</h1>
+      </IdLink>
 
-        {commandSets.map((set, index) => (
-          <Section key={index}>
-            <IdLink id={set.name} style="underline">
-              <h2>{set.name}</h2>
-            </IdLink>
-            <p>{set.description}</p>
+      {commandSets.map((set, index) => (
+        <Section key={index}>
+          <IdLink id={set.name} style="underline">
+            <h2>{set.name}</h2>
+          </IdLink>
+          <p>{set.description}</p>
 
-            {set.commands.map((command, idx) => (
-              <div key={idx}>
-                <IdLink id={command.name} style="block">
-                  <h3>{command.name}</h3>
-                </IdLink>
-                <p>{command.description}</p>
-              </div>
-            ))}
-          </Section>
-        ))}
-      </SectionedPage>
-    </BaseLayout>
+          {set.commands.map((command, idx) => (
+            <div key={idx}>
+              <IdLink id={command.name} style="block">
+                <h3>{command.name}</h3>
+              </IdLink>
+              <p>{command.description}</p>
+            </div>
+          ))}
+        </Section>
+      ))}
+    </SectionedPage>
   );
 };
 

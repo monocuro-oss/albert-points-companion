@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 
 import { getHomeMarkdown } from '@/apiClient';
-import BaseLayout from '@/layouts/BaseLayout';
 import Page from '@/layouts/Page';
 import MarkdownToHtml from '@/components/MarkdownToHtml';
 
@@ -13,11 +12,9 @@ const Home: FC = () => {
   }, []);
 
   return (
-    <BaseLayout>
-      <Page>
-        <MarkdownToHtml md={contents} />
-      </Page>
-    </BaseLayout>
+    <Page>
+      <MarkdownToHtml md={contents} />
+    </Page>
   );
 };
 

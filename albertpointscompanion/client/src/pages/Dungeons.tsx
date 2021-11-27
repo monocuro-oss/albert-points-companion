@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 
 import { getDungeonsMarkdown } from '@/apiClient';
-import BaseLayout from '@/layouts/BaseLayout';
 import Page from '@/layouts/Page';
 import MarkdownToHtml from '@/components/MarkdownToHtml';
 
@@ -13,12 +12,10 @@ const Dungeons: FC = () => {
   }, []);
 
   return (
-    <BaseLayout>
-      <Page>
-        <h1>Dungeons</h1>
-        <MarkdownToHtml md={contents} />
-      </Page>
-    </BaseLayout>
+    <Page>
+      <h1>Dungeons</h1>
+      <MarkdownToHtml md={contents} />
+    </Page>
   );
 };
 
