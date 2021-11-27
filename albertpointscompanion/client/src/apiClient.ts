@@ -42,8 +42,20 @@ const request = async <T>(payload: AxiosRequestConfig): Promise<T> => {
   return response.data;
 };
 
-export const getHomeContents = (): Promise<string> => {
-  return request({ method: 'GET', url: '/home' });
+export const getHomeMarkdown = (): Promise<string> => {
+  return request({ method: 'GET', url: '/markdown/home' });
+};
+export const getGettingStartedMarkdown = (): Promise<string> => {
+  return request({ method: 'GET', url: '/markdown/getting_started' });
+};
+export const getCommandsMarkdown = (): Promise<string> => {
+  return request({ method: 'GET', url: '/markdown/commands' });
+};
+export const getItemsMarkdown = (): Promise<string> => {
+  return request({ method: 'GET', url: '/markdown/items' });
+};
+export const getDungeonsMarkdown = (): Promise<string> => {
+  return request({ method: 'GET', url: '/markdown/dungeons' });
 };
 
 export const getCommandSets = (): Promise<CommandSet[]> => {

@@ -1,4 +1,4 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseNotFound
 from django.forms.models import model_to_dict
 
 from .models import (
@@ -16,8 +16,12 @@ from .models import (
 
 # Markdown Pages
 
-def get_home_content(request):
-    page, _ = MarkdownPages.objects.get_or_create(name='home')
+AVAILABLE_MD_PAGES = ['home', 'getting_started', 'commands', 'items', 'dungeons']
+def get_markdown(request, page_name):
+    if page_name not in AVAILABLE_MD_PAGES:
+        return HttpResponseNotFound('Document not found')
+
+    page, _ = MarkdownPages.objects.get_or_create(name=page_name)
     return HttpResponse(page.content)
 
 
