@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react';
 
 import Commands from './Commands';
+import Dungeons from './Dungeons';
+import GettingStarted from './GettingStarted';
 import Home from './Home';
 import Items from './Items';
 import Helpers from './Helpers';
@@ -19,6 +21,11 @@ export const home: Page = {
 
 export const pages: Page[] = [
   {
+    name: 'Getting Started',
+    path: '/getting-started',
+    component: <GettingStarted />,
+  },
+  {
     name: 'Commands',
     path: '/commands',
     component: <Commands />,
@@ -27,6 +34,11 @@ export const pages: Page[] = [
     name: 'Items',
     path: '/items',
     component: <Items />,
+  },
+  {
+    name: 'Dungeons',
+    path: '/dungeons',
+    component: <Dungeons />,
   },
   {
     name: 'Helpers',
