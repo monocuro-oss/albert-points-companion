@@ -15,6 +15,7 @@ export type ItemSet = {
   items: {
     name: string;
     description: string;
+    image_url: string;
   }[];
 };
 
