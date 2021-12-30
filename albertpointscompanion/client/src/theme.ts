@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const styledComponentTheme = {
   colors: {
-    background: '#2B2F34',
+    background: '#242629',
     backgroundLight: '#474C53',
     primaryAccent: '#77AE54',
     primaryAccentDark: '#62844C',
