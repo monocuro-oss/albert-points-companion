@@ -10,18 +10,24 @@ const Container = styled.div`
 `;
 
 const SectionNav = styled.nav`
+  box-sizing: border-box;
   inset: ${(props) => props.theme.layout.headerHeight} auto 0 0;
   overflow: auto;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
   padding-top: 2rem;
   position: fixed;
   width: ${(props) => props.theme.layout.sectionNavWidth};
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme.colors.backgroundLight};
+    border-radius: 50%;
+  }
 `;
 const SectionNavItemLink = styled(Link)<{ level: number }>`
   color: ${(props) => props.theme.colors.primaryAccentDark};
   display: block;
   margin-bottom: 0.5rem;
-  padding-left: ${(props) => props.level * 1.5}rem;
+  padding-left: ${(props) => (props.level - 1) * 1.5}rem;
   text-decoration: none;
 `;
 
