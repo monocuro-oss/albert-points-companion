@@ -50,9 +50,7 @@ const Items: FC = () => {
 
   return (
     <SectionedPage navItems={sectionNavItems}>
-      <IdLink id="Items">
-        <h1>Items</h1>
-      </IdLink>
+      <h1>Items</h1>
 
       <MarkdownToHtml md={contents} />
 

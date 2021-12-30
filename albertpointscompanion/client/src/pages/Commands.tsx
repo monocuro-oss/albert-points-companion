@@ -30,9 +30,7 @@ const Commands: FC = () => {
 
   return (
     <SectionedPage navItems={sectionNavItems}>
-      <IdLink id="Commands">
-        <h1>Commands</h1>
-      </IdLink>
+      <h1>Commands</h1>
 
       <MarkdownToHtml md={contents} />
 

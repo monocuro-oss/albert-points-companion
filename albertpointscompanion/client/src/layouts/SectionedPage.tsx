@@ -13,9 +13,7 @@ const SectionNav = styled.nav`
   box-sizing: border-box;
   inset: ${(props) => props.theme.layout.headerHeight} auto 0 0;
   overflow: auto;
-  padding-left: 1.5rem;
-  padding-right: 1rem;
-  padding-top: 2rem;
+  padding: 2rem 1rem 2rem 1.5rem;
   position: fixed;
   width: ${(props) => props.theme.layout.sectionNavWidth};
 
