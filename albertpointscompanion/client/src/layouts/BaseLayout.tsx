@@ -6,7 +6,8 @@ import { pages } from '@/pages';
 
 const Header = styled.header`
   align-items: center;
-  background-color: ${(props) => props.theme.colors.primaryAccent};
+  background-color: ${(props) => props.theme.colors.backgroundLight};
+  border-bottom: 0.2rem solid ${(props) => props.theme.colors.primaryAccentDark};
   box-sizing: border-box;
   display: flex;
   font-family: ${(props) => props.theme.font.headerFamily};
@@ -40,6 +41,10 @@ const NavLink = styled(Link)`
   margin: 0 1rem;
   padding: 0 1rem;
   text-decoration: none;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.textHover};
+  }
 `;
 
 const Body = styled.div`

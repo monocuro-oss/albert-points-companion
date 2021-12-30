@@ -8,6 +8,7 @@ declare module 'styled-components' {
       primaryAccent: string;
       primaryAccentDark: string;
       text: string;
+      textHover: string;
     };
     layout: {
       headerHeight: string;

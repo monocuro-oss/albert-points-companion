@@ -7,6 +7,7 @@ export const styledComponentTheme = {
     primaryAccent: '#77AE54',
     primaryAccentDark: '#62844C',
     text: '#FFFFFF',
+    textHover: '#C4C4C4',
   },
   layout: {
     headerHeight: '6rem',
