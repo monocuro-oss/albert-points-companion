@@ -5,7 +5,6 @@ import Dungeons from './Dungeons';
 import GettingStarted from './GettingStarted';
 import Home from './Home';
 import Items from './Items';
-import Helpers from './Helpers';
 
 type Page = {
   name: string;
@@ -39,10 +38,5 @@ export const pages: Page[] = [
     name: 'Dungeons',
     path: '/dungeons',
     component: <Dungeons />,
-  },
-  {
-    name: 'Helpers',
-    path: '/helpers',
-    component: <Helpers />,
   },
 ];

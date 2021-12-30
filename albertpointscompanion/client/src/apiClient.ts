@@ -18,19 +18,6 @@ export type ItemSet = {
   }[];
 };
 
-export type HelperSet = {
-  name: string;
-  description: string;
-  teams: {
-    name: string;
-    description: string;
-    helpers: {
-      name: string;
-      description: string;
-    }[];
-  }[];
-};
-
 const client = axios.create({
   baseURL: `/api/`,
 });
@@ -64,8 +51,4 @@ export const getCommandSets = (): Promise<CommandSet[]> => {
 
 export const getItemSets = (): Promise<ItemSet[]> => {
   return request({ method: 'GET', url: '/itemSets' });
-};
-
-export const getHelperSets = (): Promise<HelperSet[]> => {
-  return request({ method: 'GET', url: '/helperSets' });
 };
