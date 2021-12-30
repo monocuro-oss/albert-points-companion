@@ -32,6 +32,8 @@ const TitleLink = styled(Link)`
 
 const Nav = styled.nav`
   height: 100%;
+  overflow: auto;
+  white-space: nowrap;
 `;
 const NavLink = styled(Link)`
   align-items: center;
