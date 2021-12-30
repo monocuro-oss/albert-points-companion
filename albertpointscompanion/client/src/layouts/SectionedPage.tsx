@@ -14,13 +14,18 @@ const SectionNav = styled.nav`
   inset: ${(props) => props.theme.layout.headerHeight} auto 0 0;
   overflow: auto;
   padding-left: 1.5rem;
+  padding-right: 1rem;
   padding-top: 2rem;
   position: fixed;
   width: ${(props) => props.theme.layout.sectionNavWidth};
 
+  &::-webkit-scrollbar {
+    background-color: ${(props) => props.theme.colors.background};
+    width: 8px;
+  }
   &::-webkit-scrollbar-thumb {
     background-color: ${(props) => props.theme.colors.backgroundLight};
-    border-radius: 50%;
+    border-radius: 4px;
   }
 `;
 const SectionNavItemLink = styled(Link)<{ level: number }>`
