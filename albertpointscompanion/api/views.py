@@ -8,9 +8,6 @@ from .models import (
     Command,
     ItemCategory,
     Item,
-    HelperGroup,
-    HelperTeam,
-    Helper
 )
 
 DEFAULT_CACHE_DURATION = 60 * 5 # seconds
@@ -64,36 +61,4 @@ def get_item_categories(request):
 @cache_page(DEFAULT_CACHE_DURATION)
 def get_items(request):
     data = list(Item.objects.values().order_by('id'))
-    return JsonResponse(data, safe=False)
-
-
-# Helpers
-@cache_page(DEFAULT_CACHE_DURATION)
-def get_helper_sets(request):
-    groups = HelperGroup.objects.all().order_by('id')
-    data = [
-      {
-        **model_to_dict(group),
-        'teams': [{
-          **model_to_dict(team),
-          'helpers': list(team.helper_set.values().order_by('id'))
-        } for team in group.helperteam_set.all().order_by('id')]
-      }
-      for group in groups
-    ]
-    return JsonResponse(data, safe=False)
-
-@cache_page(DEFAULT_CACHE_DURATION)
-def get_helper_groups(request):
-    data = list(HelperGroup.objects.values().order_by('id'))
-    return JsonResponse(data, safe=False)
-
-@cache_page(DEFAULT_CACHE_DURATION)
-def get_helper_teams(request):
-    data = list(HelperTeam.objects.values().order_by('id'))
-    return JsonResponse(data, safe=False)
-
-@cache_page(DEFAULT_CACHE_DURATION)
-def get_helpers(request):
-    data = list(Helper.objects.values().order_by('id'))
     return JsonResponse(data, safe=False)

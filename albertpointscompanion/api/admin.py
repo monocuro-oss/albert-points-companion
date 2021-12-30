@@ -6,9 +6,6 @@ from .models import (
     Command,
     ItemCategory,
     Item,
-    HelperGroup,
-    HelperTeam,
-    Helper
 )
 
 for model in [
@@ -17,8 +14,5 @@ for model in [
     Command,
     ItemCategory,
     Item,
-    HelperGroup,
-    HelperTeam,
-    Helper
 ]:
     admin.site.register(model)
