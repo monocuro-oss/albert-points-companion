@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import FilterIcon from './FilterIcon';
 
 const Container = styled.div`
-  align-items: center;
-  display: flex;
   margin-bottom: 2rem;
   position: relative;
 `;
@@ -19,6 +17,9 @@ const Input = styled.input`
   width: 100%;
 `;
 const IconContainer = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
   left: 1rem;
   position: absolute;
 `;
