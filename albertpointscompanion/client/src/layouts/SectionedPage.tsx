@@ -20,7 +20,7 @@ const SectionNav = styled.nav`
   width: ${(props) => props.theme.layout.sectionNavWidth};
 
   &::-webkit-scrollbar {
-    background-color: ${(props) => props.theme.colors.background};
+    background-color: ${(props) => props.theme.colors.scrollbar};
     width: 8px;
   }
   &::-webkit-scrollbar-thumb {

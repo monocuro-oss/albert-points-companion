@@ -9,6 +9,7 @@ declare module 'styled-components' {
       primaryAccentDark: string;
       text: string;
       textHover: string;
+      scrollbar: string;
     };
     layout: {
       headerHeight: string;

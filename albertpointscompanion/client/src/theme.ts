@@ -8,6 +8,7 @@ export const styledComponentTheme = {
     primaryAccentDark: '#62844C',
     text: '#FFFFFF',
     textHover: '#C4C4C4',
+    scrollbar: '#313131',
   },
   layout: {
     headerHeight: '6rem',
