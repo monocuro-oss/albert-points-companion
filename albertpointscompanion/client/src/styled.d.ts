@@ -10,6 +10,7 @@ declare module 'styled-components' {
       text: string;
       textHover: string;
       scrollbar: string;
+      textbox: string;
     };
     layout: {
       headerHeight: string;

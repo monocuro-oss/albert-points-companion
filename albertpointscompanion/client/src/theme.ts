@@ -9,6 +9,7 @@ export const styledComponentTheme = {
     text: '#FFFFFF',
     textHover: '#C4C4C4',
     scrollbar: '#313131',
+    textbox: '#484848',
   },
   layout: {
     headerHeight: '6rem',

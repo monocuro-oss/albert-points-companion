@@ -7,34 +7,57 @@ import SectionedPage, {
 } from '@/layouts/SectionedPage';
 import IdLink from '@/components/IdLink';
 import MarkdownToHtml from '@/components/MarkdownToHtml';
+import Filterbox from '@/components/Filterbox';
 
 const Commands: FC = () => {
   const [commandSets, setCommandSets] = useState<CommandSet[]>([]);
   const [contents, setContents] = useState<string>('');
+  const [filterText, setFilterText] = useState<string>('');
 
   useEffect(() => {
     getCommandsMarkdown().then(setContents);
     getCommandSets().then(setCommandSets);
   }, []);
 
-  const sectionNavItems: SectionNavItem[] = useMemo(() => {
-    if (!commandSets) return [];
+  const filteredSets = useMemo(() => {
+    const lowerCaseFilterText = filterText.toLowerCase();
 
-    return commandSets.map((set) => ({
+    return commandSets
+      .map((set) => {
+        const filteredCommands = set.commands.filter(
+          (command) =>
+            command.name.toLowerCase().includes(lowerCaseFilterText) ||
+            command.description.toLowerCase().includes(lowerCaseFilterText)
+        );
+        return filteredCommands.length > 0
+          ? { ...set, commands: filteredCommands }
+          : null;
+      })
+      .filter((set): set is CommandSet => set != null);
+  }, [commandSets, filterText]);
+
+  const sectionNavItems: SectionNavItem[] = useMemo(() => {
+    if (!filteredSets) return [];
+
+    return filteredSets.map((set) => ({
       name: set.name,
       children: set.commands.map((command) => ({
         name: command.name,
       })),
     }));
-  }, [commandSets]);
+  }, [filteredSets]);
 
   return (
     <SectionedPage navItems={sectionNavItems}>
       <h1>Commands</h1>
-
       <MarkdownToHtml md={contents} />
+      <Filterbox
+        value={filterText}
+        onChange={(event) => setFilterText(event.target.value)}
+        placeholder="Filter by name or description"
+      />
 
-      {commandSets.map((set, index) => (
+      {filteredSets.map((set, index) => (
         <Section key={index}>
           <IdLink id={set.name} style="underline">
             <h2>{set.name}</h2>
