@@ -13,6 +13,10 @@ export const styledComponentTheme = {
     sectionNavWidth: '15rem',
     contentMaxWidth: '1200px',
   },
+  font: {
+    baseFamily: `'Segoe UI', Tahoma, Geneva, Verdana, sans-serif`,
+    headerFamily: `'Righteous', cursive`,
+  },
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -23,8 +27,13 @@ html, body {
 html {
   background-color: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.text};
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: ${(props) => props.theme.font.baseFamily};
   font-size: 16px;
+}
+
+h1 {
+  font-family: ${(props) => props.theme.font.headerFamily};
+  text-transform: uppercase;
 }
 
 a {

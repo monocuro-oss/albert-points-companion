@@ -9,11 +9,13 @@ const Header = styled.header`
   background-color: ${(props) => props.theme.colors.primaryAccent};
   box-sizing: border-box;
   display: flex;
+  font-family: ${(props) => props.theme.font.headerFamily};
   height: ${(props) => props.theme.layout.headerHeight};
   left: 0;
   justify-content: space-between;
   padding: 0 3rem;
   position: fixed;
+  text-transform: uppercase;
   top: 0;
   width: 100%;
   z-index: 1000;

@@ -14,5 +14,9 @@ declare module 'styled-components' {
       sectionNavWidth: string;
       contentMaxWidth: string;
     };
+    font: {
+      baseFamily: string;
+      headerFamily: string;
+    };
   }
 }
